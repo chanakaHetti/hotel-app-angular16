@@ -1,8 +1,9 @@
 <app-home></app-home>
+
 <form [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
   <div>
-    <label for="">Check-In Date:</label>
-    <input type="date" formControlName="checkInDate" />
+    <label for="checkInDate">Check-In Date:</label>
+    <input type="date" id="checkInDate" formControlName="checkInDate" />
     <div
       *ngIf="
         reservationForm.get('checkInDate')?.invalid &&
@@ -14,8 +15,8 @@
   </div>
 
   <div>
-    <label for="">Check-Out Date:</label>
-    <input type="date" formControlName="checkOutDate" />
+    <label for="checkOutDate">Check-Out Date:</label>
+    <input type="date" id="checkOutDate" formControlName="checkOutDate" />
     <div
       *ngIf="
         reservationForm.get('checkOutDate')?.invalid &&
@@ -27,8 +28,8 @@
   </div>
 
   <div>
-    <label for="">Guest Name:</label>
-    <input type="text" formControlName="guestName" />
+    <label for="guestName">Guest Name:</label>
+    <input type="text" id="guestName" formControlName="guestName" />
     <div
       *ngIf="
         reservationForm.get('guestName')?.invalid &&
@@ -40,8 +41,8 @@
   </div>
 
   <div>
-    <label for="">Guest Email:</label>
-    <input type="email" formControlName="guestEmail" />
+    <label for="guestEmail">Guest Email:</label>
+    <input type="email" id="guestEmail" formControlName="guestEmail" />
     <div
       *ngIf="
         reservationForm.get('guestEmail')?.invalid &&
@@ -53,8 +54,8 @@
   </div>
 
   <div>
-    <label for="">Room Number:</label>
-    <input type="number" formControlName="roomNumber" />
+    <label for="roomNumber">Room Number:</label>
+    <input type="number" id="roomNumber" formControlName="roomNumber" />
     <div
       *ngIf="
         reservationForm.get('roomNumber')?.invalid &&

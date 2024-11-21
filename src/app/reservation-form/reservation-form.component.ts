@@ -31,21 +31,21 @@ export class ReservationFormComponent implements OnInit {
 
     let id = this.activatedRoute.snapshot.paramMap.get('id');
     if (id) {
-      let reservation = this.reservationService.getReservation(id);
-
-      if (reservation) this.reservationForm.patchValue(reservation);
+      this.reservationService.getReservation(id).subscribe((reservation) => {
+        this.reservationForm.patchValue(reservation);
+      });
     }
   }
 
   onSubmit() {
     if (this.reservationForm.valid) {
       let reservation: Reservation = this.reservationForm.value;
-
       let id = this.activatedRoute.snapshot.paramMap.get('id');
+
       if (id) {
-        this.reservationService.updateReservation(id, reservation);
+        this.reservationService.updateReservation(id, reservation).subscribe();
       } else {
-        this.reservationService.addReservation(reservation);
+        this.reservationService.addReservation(reservation).subscribe();
       }
 
       this.router.navigate(['/list']);
